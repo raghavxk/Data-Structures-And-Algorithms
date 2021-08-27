@@ -29,13 +29,11 @@ int Knapsack(vector<int> weight, vector<int> val, int W, int n)
     }
     if (weight[n - 1] <= W)
     {
-        dp[n][W] = max(val[n - 1] + Knapsack(weight, val, W - weight[n - 1], n - 1), Knapsack(weight, val, W, n - 1));
-        return dp[n][W];
+        return dp[n][W] = max(val[n - 1] + Knapsack(weight, val, W - weight[n - 1], n - 1), Knapsack(weight, val, W, n - 1));
     }
     else if (weight[n - 1] > W)
     {
-        dp[n][W] = Knapsack(weight, val, W, n - 1);
-        return dp[n][W];
+        return dp[n][W] = Knapsack(weight, val, W, n - 1);
     }
 }
 void solve()
