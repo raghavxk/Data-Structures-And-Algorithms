@@ -32,7 +32,7 @@ void solve()
         {
             if (num[i - 1] < target)
             {
-                dp[i][j] = dp[i][j - num[i + 1]] or dp[i - 1][j];
+                dp[i][j] = dp[i][j - num[i - 1]] or dp[i - 1][j];
             }
             else
             {
