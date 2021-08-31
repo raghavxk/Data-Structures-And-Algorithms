@@ -26,7 +26,7 @@ void solve()
     {
         cin >> num[i];
     }
-    for (int i = 0; i < n + 1; ++i)
+    for (int i = 1; i < n + 1; ++i)
     {
         for (int j = 1; j < target + 1; ++j)
         {
