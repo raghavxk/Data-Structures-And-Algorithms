@@ -14,35 +14,35 @@ const float PI = 3.14159265;
 using namespace std;
 
 // Code starts here !
-int visited[1001];
+bool visited[1001];
 
-void dfs(int v,vector<int> ar[])
+void dfs(vector<int> ar[], int v)
 {
-    visited[v]=1;
-    cout<<v<<" "<<endl;
-    for(int i = 0;i < ar[v].size();++i)
+    visited[v] = 1;
+    cout << v << " " << endl;
+    for (int i = 0; i < ar[v].size(); ++i)
     {
         int child = ar[v][i];
-        if(visited[child]==0)
+        if (visited[child] == 0)
         {
-            dfs(child,ar);
+            dfs(ar, child);
         }
     }
 }
 
 void solve()
 {
-    int nodes,edges;
-    cin>>nodes>>edges;
-    vector<int> ar[nodes+1];
-    int a,b;
-    while(edges--)
+    int nodes, edges;
+    cin >> nodes >> edges;
+    vector<int> ar[nodes + 1];
+    int a, b;
+    while (edges--)
     {
-        cin>>a>>b;
+        cin >> a >> b;
         ar[a].push_back(b);
         ar[b].push_back(a);
     }
-    dfs(1,ar);
+    dfs(ar, 1);
 }
 
 signed main()
@@ -52,7 +52,6 @@ signed main()
     freopen("Input.txt", "r", stdin);
     freopen("Output.txt", "w", stdout);
 #endif
-
 
     int T = 1;
     cin >> T;
