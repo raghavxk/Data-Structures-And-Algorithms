@@ -25,18 +25,18 @@ void BFS(int source)
     q.push(source);
     visited[source] = true;
     sssp[source] = 0;
-    while(!q.empty())
+    while (!q.empty())
     {
         int curr = q.front();
         q.pop();
 
-        for(int child : graph[curr])
+        for (int child : graph[curr])
         {
-            if(visited[child]==false)
+            if (visited[child] == false)
             {
                 q.push(child);
-                sssp[child]=sssp[curr]+1;
-                visited[child]=true;
+                sssp[child] = sssp[curr] + 1;
+                visited[child] = true;
             }
         }
     }
