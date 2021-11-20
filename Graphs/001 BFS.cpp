@@ -9,7 +9,7 @@ public:
                 q.push(i);
                 visited[i] = true;
                 while (!q.empty()) {
-                    int node = q.top();
+                    int node = q.front();
                     q.pop();
                     bfs.push_back(node);
 
